@@ -1,0 +1,23 @@
+<div class="bg-primary-color border-radius text-white" style="width: 100%; ">
+  <div class="flex flex-column align-items-center">
+    <div class="text-center">
+      <h2 class="text-2xl font-semibold ">Compra tus tickets</h2>
+    </div>
+    <div class="grid w-full">
+      @for (tike of ticketList; track $index) {
+      <div class="col-4">
+        <div
+          class="bg-primary-color-dark  border-radius flex align-items-center justify-content-center  border-1 border-white cursor-pointer">
+          <h1 class="text-3xl font-normal">+2</h1>
+        </div>
+      </div>
+      }
+    </div>
+    <div>
+      aumentar tickets
+    </div>
+    <div>
+      footer
+    </div>
+  </div>
+</div>

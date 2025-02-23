@@ -1,1 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+$primary-color: #346fd5;
+$primary-color-light: #b2c8e7;
+
+
+$primary-color-dark: #174fb1;
+$primary-hover: #5478f5;
+
+$white: #ebebeb;
+$black: #21273b;
+
+$border-radius-banner: 9px;
+
+body {
+  background-color: $white;
+}
+
+p,
+span {
+  color: $black;
+}
+
+.primary-color {
+  color: $primary-color;
+}
+
+.primary-color-light {
+  color: $primary-color-light;
+}
+
+.primary-color-dark {
+  color: $primary-color-dark;
+}
+
+.bg-primary-color {
+  background-color: $primary-color;
+}
+
+.bg-primary-color-light {
+  background-color: $primary-color-light;
+}
+
+.bg-primary-color-dark {
+  background-color: $primary-color-dark;
+}
+
+/* Estilo del scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  /* Ancho del scrollbar vertical */
+}
+.border-radius{
+  border-radius: $border-radius-banner;
+}
+/* Barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  /* Color de la barra */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  border: 2px solid #f0f0f0;
+  /* Espaciado alrededor */
+}
+
+/* Hover sobre la barra de desplazamiento */
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-hover;
+  /* Color al pasar el ratón */
+}
+
+/* Scrollbar en modo activo */
+::-webkit-scrollbar-thumb:active {
+  background: $primary-color-dark;
+  /* Color al hacer clic */
+}

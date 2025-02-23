@@ -1,0 +1,38 @@
+<p-galleria [value]="images" [numVisible]="5" [circular]="true" [showItemNavigators]="true" [showThumbnails]="false"
+	[responsiveOptions]="responsiveOptions" >
+	<ng-template pTemplate="item" let-item>
+		<img [src]="item.url" style="width: 100%; display: block" class="border-radius" />
+	</ng-template>
+
+	<ng-template pTemplate="caption" let-item>
+		<div class="flex align-items-center justify-content-between">
+			<span class="text-2xl font-semibold text-white">Camioneta 4x4</span>
+			<button pButton pRipple class="p-button-sm bg-primary-color "> Comprar ahora</button>
+		</div>
+	</ng-template>
+	<ng-template pTemplate="footer" let-item>
+		<!-- DETALLES -->
+		<div class="py-3">
+			<div class="flex align-items-center justify-content-between ">
+				<div class="flex  justify-content-center align-items-center gap-2 bg-primary-color p-2 border-round-lg">
+					<i class="pi pi-calendar primary-color-light"></i>
+					<span class="font-semibold primary-color-light"> 7 febrero de 2025</span>
+				</div>
+
+				<div class="flex flex-column align-items-start gap-1">
+					<span class="font-semibold">Ticket</span>
+					<span class="primary-color font-bold">Bs.500,00</span>
+				</div>
+			</div>
+			<!-- DESCRIPCIÓN -->
+			<div class="text-stard ">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo sit cum alias, maiores modi aut
+					consectetur
+					obcaecati ea iure. Iusto!</p>
+			</div>
+			<div>
+				<p-progressBar color="#346fd5" [value]="10" />
+			</div>
+		</div>
+	</ng-template>
+</p-galleria>
