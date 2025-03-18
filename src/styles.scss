@@ -14,6 +14,11 @@ $black: #21273b;
 
 $border-radius-banner: 9px;
 
+*:not(button):not(#header):not(#footer):not(input) {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: $white;
 }
@@ -52,9 +57,11 @@ span {
   width: 6px;
   /* Ancho del scrollbar vertical */
 }
-.border-radius{
+
+.border-radius {
   border-radius: $border-radius-banner;
 }
+
 /* Barra de desplazamiento */
 ::-webkit-scrollbar-thumb {
   background: $primary-color;

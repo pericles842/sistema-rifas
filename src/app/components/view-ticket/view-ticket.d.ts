@@ -7,6 +7,5 @@
 export interface Ticket {
     amount: number;
     label: string;
-    price: number;
     description: string;
 }

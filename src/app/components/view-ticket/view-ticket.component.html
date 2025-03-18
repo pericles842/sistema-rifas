@@ -1,23 +1,79 @@
-<div class="bg-primary-color border-radius text-white" style="width: 100%; ">
+<div class=" border-radius " style="width: 100%; ">
   <div class="flex flex-column align-items-center">
-    <div class="text-center">
+    <div class="text-center p-5">
       <h2 class="text-2xl font-semibold ">Compra tus tickets</h2>
     </div>
-    <div class="grid w-full">
-      @for (tike of ticketList; track $index) {
-      <div class="col-4">
+    <!-- EL GAP Y P3 DEFINE EL ALTO Y ANCHO DE LAS CJAS -->
+    <div class="grid w-full  gap-3 p-3" *ngFor="let tickets of ticketList">
+      <div class="col  p-0" *ngFor="let ticket of tickets">
         <div
-          class="bg-primary-color-dark  border-radius flex align-items-center justify-content-center  border-1 border-white cursor-pointer">
-          <h1 class="text-3xl font-normal">+2</h1>
+          class="bg-primary-color  border-radius flex align-items-center justify-content-center  cursor-pointer h-5rem">
+          <h1 class="text-2xl text-white font-normal">{{ticket.label}}</h1>
         </div>
       </div>
-      }
     </div>
-    <div>
-      aumentar tickets
+    <div class="flex p-3 gap-3 w-full justify-content-between">
+      <button pButton pRipple class="bg-primary-color pi pi-minus p-3"></button>
+
+      <p-inputNumber class="w-full" inputStyleClass="w-full text-center" styleClass="w-full" inputId="minmax"
+        mode="decimal" [min]="0" [max]="100" />
+      <button pButton pRipple class="bg-primary-color pi pi-plus p-3"></button>
     </div>
-    <div>
-      footer
+    <div class="flex p-3 gap-3 w-full flex-column justify-content-center align-items-center">
+      <button (click)="viewModal = true" pButton pRipple
+        class="w-full text-center flex bg-primary-color justify-content-center">Comprar Boletos</button>
+      <button pButton pRipple class="w-full text-center flex  p-button-outlined justify-content-center">Limpiar</button>
     </div>
   </div>
 </div>
+
+<!-- MODAL DE PAGO -->
+<p-dialog contentStyleClass="p-3" [modal]="true" [(visible)]="viewModal" [style]="{ width: '25rem' }">
+
+  <ng-template pTemplate="header">
+    <div class="p-4">
+      <h2 class="text-2xl font-semibold">Confirmar Compra</h2>
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="content">
+    <div class="grid  p-1">
+      <div class="flex flex-column gap-2 col-12">
+        <label for="username">Nombre</label>
+        <input pInputText id="username" aria-describedby="username-help" />
+      </div>
+
+      <div class="flex flex-column gap-2 col-12 my-3">
+        <label for="username">Email</label>
+        <input type="email" pInputText id="username" aria-describedby="username-help" />
+      </div>
+
+      <div class="flex flex-column gap-2 col-12">
+        <label for="username">Numero de teléfono</label>
+        <input type="email" pInputText id="username" aria-describedby="username-help" />
+      </div>
+
+      <div class="flex flex-column gap-2 col-12 my-3">
+        <label for="username">Numero de referencia</label>
+        <input type="email" pInputText id="username" aria-describedby="username-help" />
+      </div>
+
+      <div class="flex flex-column gap-2 col-12">
+        <label for="username">Tikes</label>
+        <input type="email" pInputText id="username" aria-describedby="username-help" />
+      </div>
+
+      <div class="flex flex-column gap-2 col-12 my-3">
+        <p-fileUpload mode="basic" chooseLabel="Subir archivo" styleClass=" p-2 bg-primary-color"
+          chooseIcon="pi pi-upload" name="demo[]" accept="image/*" [maxFileSize]="1000000" />
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <div class="flex justify-content-end gap-2 p-2">
+      <button pButton pRipple class="text-white p-button-danger" (click)="viewModal = false">Cancelar</button>
+      <button pButton pRipple class="text-white " (click)="viewModal = false">Confirmar</button>
+    </div>
+  </ng-template>
+
+</p-dialog>
