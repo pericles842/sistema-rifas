@@ -7,7 +7,7 @@ import { Ticket } from './view-ticket';
   styleUrls: ['./view-ticket.component.scss']
 })
 export class ViewTicketComponent {
-  viewModal: boolean = true
+  viewModal: boolean = false
   ticketList: Ticket[][] = [
     [
       {

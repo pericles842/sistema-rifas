@@ -28,51 +28,59 @@
 </div>
 
 <!-- MODAL DE PAGO -->
-<p-dialog contentStyleClass="p-3" [modal]="true" [(visible)]="viewModal" [style]="{ width: '25rem' }">
+<p-dialog contentStyleClass="p-3" [modal]="true" [(visible)]="viewModal"
+  [style]="{ width: '25rem',maxWidth: '600px'  }">
 
   <ng-template pTemplate="header">
-    <div class="p-4">
+    <div class="">
       <h2 class="text-2xl font-semibold">Confirmar Compra</h2>
     </div>
   </ng-template>
 
   <ng-template pTemplate="content">
-    <div class="grid  p-1">
+
+    <div class="grid ">
+      <div class="flex justify-content-center overflow-auto ">
+        <div class="w-9">
+          <app-payment-details></app-payment-details>
+        </div>
+      </div>
+
       <div class="flex flex-column gap-2 col-12">
         <label for="username">Nombre</label>
         <input pInputText id="username" aria-describedby="username-help" />
       </div>
 
-      <div class="flex flex-column gap-2 col-12 my-3">
+      <div class="flex flex-column gap-2 col-12 my-2">
         <label for="username">Email</label>
         <input type="email" pInputText id="username" aria-describedby="username-help" />
       </div>
 
       <div class="flex flex-column gap-2 col-12">
         <label for="username">Numero de teléfono</label>
-        <input type="email" pInputText id="username" aria-describedby="username-help" />
+        <input type="number" pInputText id="username" aria-describedby="username-help" />
       </div>
 
-      <div class="flex flex-column gap-2 col-12 my-3">
+      <div class="flex flex-column gap-2 col-12 my-2">
         <label for="username">Numero de referencia</label>
-        <input type="email" pInputText id="username" aria-describedby="username-help" />
+        <input type="number" pInputText id="username" aria-describedby="username-help" />
       </div>
 
       <div class="flex flex-column gap-2 col-12">
         <label for="username">Tikes</label>
-        <input type="email" pInputText id="username" aria-describedby="username-help" />
+        <input type="number" pInputText id="username" disabled aria-describedby="username-help" />
       </div>
 
-      <div class="flex flex-column gap-2 col-12 my-3">
-        <p-fileUpload mode="basic" chooseLabel="Subir archivo" styleClass=" p-2 bg-primary-color"
+      <div class="flex flex-column gap-2 col-12 my-2">
+        <p-fileUpload mode="basic" chooseLabel="Subir archivo" styleClass=" p-2 bg-primary-color text-white"
           chooseIcon="pi pi-upload" name="demo[]" accept="image/*" [maxFileSize]="1000000" />
       </div>
     </div>
   </ng-template>
   <ng-template pTemplate="footer">
-    <div class="flex justify-content-end gap-2 p-2">
-      <button pButton pRipple class="text-white p-button-danger" (click)="viewModal = false">Cancelar</button>
-      <button pButton pRipple class="text-white " (click)="viewModal = false">Confirmar</button>
+    <div class="flex justify-content-end gap-2 ">
+      <button pButton pRipple class="p-button-sm text-white p-button-danger" (click)="viewModal = false">Cancelar</button>
+      <button pButton pRipple class="p-button-sm text-white " (click)="viewModal = false">Confirmar</button>
     </div>
   </ng-template>
 

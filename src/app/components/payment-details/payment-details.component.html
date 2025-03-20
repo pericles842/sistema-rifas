@@ -1,0 +1,9 @@
+<p-carousel [value]="payments" [numVisible]="1" [numScroll]="1" [circular]="false" [showIndicators]="false">
+  <ng-template let-payment pTemplate="item">
+    <div class="flex flex-column p-3 border-round  bg-white text-center">
+      <span class="font-bold text-lg text-primary">{{ payment.label }}</span>
+      <span class="text-gray-500">{{ payment.ci }}</span>
+      <span class="text-gray-500">{{ payment.cel }}</span>
+    </div>
+  </ng-template>
+</p-carousel>
